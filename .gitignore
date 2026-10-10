@@ -34,9 +34,11 @@ desktop.ini
 **/generated-images/
 **/底图/
 
-# bubble_lib.py 运行时生成的样张（按需重生成）
-tools/_bubble_samples/
-tools/_bubble_samples_overview.png
+# bubble_lib.py 运行时生成的样张：**这些要入仓库**（README 引用）
+# 取消排除：tools/_bubble_samples/ 和 tools/_bubble_samples_overview.png
+# 取消下面两行的注释即可恢复排除
+# tools/_bubble_samples/
+# tools/_bubble_samples_overview.png
 
 # 拼卡脚本运行时的临时产物
 **/_拼卡_*/

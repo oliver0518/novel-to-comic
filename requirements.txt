@@ -1,0 +1,13 @@
+# novel-to-comic 工具依赖
+#
+# 安装：
+#   pip install -r requirements.txt
+#
+# 只用这三个第三方库：
+#   Pillow   —— 所有后期绘制（气泡、顶栏、水印、去水印、白条化）
+#   numpy    —— 灰度矩阵、亮度统计、像素量化
+#   scipy    —— 连通域识别（QA 门禁的气泡体检、水印笔画判定）
+
+Pillow>=10.0
+numpy>=1.24
+scipy>=1.10

@@ -1,0 +1,19 @@
+# check_refs.py 前瞻引用白名单
+#
+# 用法：每行写一个「仓库相对路径」——该文件确实被文档引用，但计划中、尚未创建，
+#       因此不算断链。空行与 # 之后的内容忽略。
+# 注意：只放真的还没到创建时点的文件。已过期的引用应该直接去改文档。
+#
+# 本项目里的"前瞻"项：
+# - tools/_bubble_samples/          ← bubble_lib.py 运行时生成的样张目录
+# - tools/_bubble_samples_overview.png ← bubble_lib.py 运行时生成的总览图
+# - skills/novel-character-card/references/  ← 用户项目里按需扩展
+# - skills/novel-scene-card/references/      ← 用户项目里按需扩展
+# - skills/novel-qa-gate/references/         ← 用户项目里按需扩展
+#
+# 生成气泡样张：python3 tools/bubble_lib.py
+tools/_bubble_samples/
+tools/_bubble_samples_overview.png
+skills/novel-character-card/references/
+skills/novel-scene-card/references/
+skills/novel-qa-gate/references/

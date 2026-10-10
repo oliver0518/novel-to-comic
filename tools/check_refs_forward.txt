@@ -12,8 +12,6 @@
 # - skills/novel-qa-gate/references/         ← 用户项目里按需扩展
 #
 # 生成气泡样张：python3 tools/bubble_lib.py
-# 生成集成品 mock：python3 tools/_make_page_samples.py
 skills/novel-character-card/references/
 skills/novel-scene-card/references/
 skills/novel-qa-gate/references/
-tools/_page_samples/

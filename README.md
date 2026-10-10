@@ -41,22 +41,16 @@ python3 tools/bubble_lib.py
 # → tools/_bubble_samples_overview.png 总览
 ```
 
-### 集成品 mock 样张（结构示例）
-
-3 张 1080×1920 (9:16) mock 集成品样张，使用通用占位文字，**不绑定任何特定小说/角色/场景**。
+### 集成品真实样张（来自 5+ 个月连载实战的《凡人修仙传》漫改工程）
 
 | 页面 | 说明 |
 |------|------|
-| ![P01 封面](tools/_page_samples/mock_P01_封面.png) | P01 封面：Logo 浮动标题板 + 主视觉 + 浮字 |
-| ![P02 铺垫](tools/_page_samples/mock_P02_铺垫.png) | P02 铺垫页：地点框 + 旁白 + 对白 + 心声 |
-| ![P05 钩子](tools/_page_samples/mock_P05_钩子.png) | P05 末页：喊声 + 浮字 + 关注条 |
+| ![C03 火弹术封面](tools/C03_火弹术_封面.png) | C03《火弹术》封面：Logo + 副标题 + 多分镜主视觉 + 金字浮字"火弹" |
+| ![C10 落日峰金光末页](tools/C10_落日峰金光_末页.png) | C10《全局》末页：远景构图 + 旁白 + 关注条 + 月下山峦氛围 |
 
-生成命令：
-
-```bash
-python3 tools/_make_page_samples.py
-# → tools/_page_samples/ 3 张 mock 集成品
-```
+这两张覆盖典型集成品结构：
+- **封面**：Logo 浮动标题板 + 主视觉 + 浮字 + 强冲突首图
+- **末页**：场景远景 + 旁白 + 关注条（"关注我，一集不漏"）
 
 ---
 
@@ -83,10 +77,10 @@ novel-to-comic/
 │   ├── qa_check.py          # 7 项自动质检门禁
 │   ├── check_refs.py        # 文档/脚本引用断链体检
 │   ├── compose_card.py      # 角色卡拼装脚本（参考实现）
-│   ├── _make_page_samples.py    # 集成品 mock 样张生成器
+│   ├── C03_火弹术_封面.png  # 集成品样张（封面）
+│   ├── C10_落日峰金光_末页.png  # 集成品样张（末页）
 │   ├── _bubble_samples/         # 9 张气泡样式样张（运行后生成）
-│   ├── _bubble_samples_overview.png   # 气泡总览
-│   └── _page_samples/             # 3 张集成品 mock 样张（运行后生成）
+│   └── _bubble_samples_overview.png   # 气泡总览
 ├── docs/                    # 设计文档与方法论详解
 │   ├── 01-overview.md
 │   ├── 02-pipeline.md

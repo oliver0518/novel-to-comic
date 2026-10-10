@@ -25,9 +25,9 @@
 
 ---
 
-## 看效果 · 工具直接出的气泡样张
+## 看效果 · 工具直接出的样张
 
-`tools/bubble_lib.py` 一次跑出来，无需任何外部依赖：
+### 气泡样式（`bubble_lib.py` 一次跑出来）
 
 ![气泡样式总览](tools/_bubble_samples_overview.png)
 
@@ -39,6 +39,23 @@
 python3 tools/bubble_lib.py
 # → tools/_bubble_samples/ 9 张分样式
 # → tools/_bubble_samples_overview.png 总览
+```
+
+### 集成品 mock 样张（结构示例）
+
+3 张 1080×1920 (9:16) mock 集成品样张，使用通用占位文字，**不绑定任何特定小说/角色/场景**。
+
+| 页面 | 说明 |
+|------|------|
+| ![P01 封面](tools/_page_samples/mock_P01_封面.png) | P01 封面：Logo 浮动标题板 + 主视觉 + 浮字 |
+| ![P02 铺垫](tools/_page_samples/mock_P02_铺垫.png) | P02 铺垫页：地点框 + 旁白 + 对白 + 心声 |
+| ![P05 钩子](tools/_page_samples/mock_P05_钩子.png) | P05 末页：喊声 + 浮字 + 关注条 |
+
+生成命令：
+
+```bash
+python3 tools/_make_page_samples.py
+# → tools/_page_samples/ 3 张 mock 集成品
 ```
 
 ---
@@ -66,8 +83,10 @@ novel-to-comic/
 │   ├── qa_check.py          # 7 项自动质检门禁
 │   ├── check_refs.py        # 文档/脚本引用断链体检
 │   ├── compose_card.py      # 角色卡拼装脚本（参考实现）
-│   ├── _bubble_samples/     # 9 张气泡样式样张（运行后生成）
-│   └── _bubble_samples_overview.png   # 气泡总览（运行后生成）
+│   ├── _make_page_samples.py    # 集成品 mock 样张生成器
+│   ├── _bubble_samples/         # 9 张气泡样式样张（运行后生成）
+│   ├── _bubble_samples_overview.png   # 气泡总览
+│   └── _page_samples/             # 3 张集成品 mock 样张（运行后生成）
 ├── docs/                    # 设计文档与方法论详解
 │   ├── 01-overview.md
 │   ├── 02-pipeline.md

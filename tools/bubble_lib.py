@@ -356,6 +356,20 @@ def cloud_bubble(d, cx, cy, bw, bh, lines, size=30, tail=None, tail_len=34):
     _draw_centered_lines(d, cx, cy, lines, size)
 
 
+def chubby_bubble(d, cx, cy, bw, bh, lines, size=30, tail=None, tail_len=40):
+    """Q 版搞笑场景：胖乎乎的大圆泡，边缘鼓得夸张。"""
+    pts = _blob_pts(cx, cy, bw / 2 * 1.02, bh / 2 * 1.02, wob=0.055, seed=11, n=96)
+    # 横轴再往外顶一点，泡像鼓起来的腮帮子；竖轴收着，别顶出框
+    puffed = []
+    for x, y in pts:
+        dx, dy = x - cx, y - cy
+        k = 1 + 0.05 * math.cos(2 * math.atan2(dy, dx))
+        puffed.append((cx + dx * k, cy + dy * k))
+    pts = _merge_tail_into_outline(puffed, cx, cy, bw, bh, tail, tail_len)
+    _thick_poly(d, pts, fill=PAPER, width=8)
+    _draw_centered_lines(d, cx, cy, lines, size)
+
+
 def jagged_bubble(d, cx, cy, bw, bh, lines, size=32, spikes=18, inner=0.78, tail=None, tail_len=42):
     """惊呼/战斗喊声：粗黑锯齿泡。"""
     pts = []
@@ -507,6 +521,14 @@ if __name__ == "__main__":
     im, d = bg("09_手绘边旁白")
     narration(d, 116, 130, ["那道青光", "只闪了一瞬"], size=30, pad=18, style="rough")
     samples.append(("09_手绘边旁白.png", im))
+
+    im, d = bg("10_Q版胖泡")
+    chubby_bubble(d, 350, 250, 380, 170, ["哎哟喂——", "这也太胖了"], size=36, tail=(230, 400))
+    samples.append(("10_Q版胖泡.png", im))
+
+    im, d = bg("11_尖刺搞笑泡")
+    jagged_bubble(d, 750, 240, 330, 150, ["什么鬼！"], size=38, spikes=14, inner=0.74, tail=(640, 360))
+    samples.append(("11_尖刺搞笑泡.png", im))
 
     for name, im in samples:
         im.save(os.path.join(sample_dir, name), optimize=True)
